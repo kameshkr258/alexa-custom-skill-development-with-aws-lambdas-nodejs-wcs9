@@ -1,5 +1,5 @@
 
-# Alexa Skill Building For HCL Hackathon Store using WCS 9.0
+# Alexa Custom Skill For HCL Hackathon Store using WCS 9.0
 
 ### Welcome!
 
