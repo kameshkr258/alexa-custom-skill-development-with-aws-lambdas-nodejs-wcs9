@@ -2,9 +2,9 @@ const Alexa = require("ask-sdk-core");
 const axios = require("axios");
 const https = require("https");
 
-const storeId = "11";
-const hostname = "184.170.233.64";
-const portSearch = "30901";
+const storeId = `{storeId}`;  // update storeId
+const hostname = `{hostname}`; // update hostname
+const portSearch = `{portNumber}`; //update portnumber 
 
 const callApiHandler = {
   consume(url, method, headers, data) {
