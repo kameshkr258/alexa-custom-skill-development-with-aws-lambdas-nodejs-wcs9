@@ -16,12 +16,8 @@ Recommended:
 * You should have some experience with scripting or Javascript programming.
 * Basic exprience of API Handling.
 * Handson in AWS Lambdas.
-* Experience in Axios, https, ask-sdk-core,i18next API.
-      "ask-sdk-core": "^2.7.0",
-      "ask-sdk-model": "^1.18.0",
-      "i18next": "^15.0.5",
-      "axios": "^0.18.0"
-    
+* Experience in Axios, https, ask-sdk-core,i18next APIs.
+
 <hr />
 
 Thankyou, If you like or learn something from this repo then please give it a star.
