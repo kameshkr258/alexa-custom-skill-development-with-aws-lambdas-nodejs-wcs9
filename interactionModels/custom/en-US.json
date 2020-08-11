@@ -1,0 +1,391 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "hcl hackathon store",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "CategoryIntent",
+          "slots": [
+            {
+              "name": "categoryName",
+              "type": "CategoryType",
+              "samples": [
+                "{categoryName}"
+              ]
+            }
+          ],
+          "samples": [
+            "I would like to go for {categoryName}",
+            "{categoryName}"
+          ]
+        },
+        {
+          "name": "ProductIntent",
+          "slots": [
+            {
+              "name": "productName",
+              "type": "ProductType",
+              "samples": [
+                "{productName}"
+              ]
+            },
+            {
+              "name": "quantity",
+              "type": "AMAZON.Ordinal",
+              "samples": [
+                "{quantity}"
+              ]
+            }
+          ],
+          "samples": [
+            "show me the {productName}",
+            "{productName}"
+          ]
+        },
+        {
+          "name": "AddToCartIntent",
+          "slots": [],
+          "samples": [
+            "please add to cart",
+            "add to cart",
+            "please add to my cart.",
+            "Sure"
+          ]
+        },
+        {
+          "name": "PlaceOrderIntent",
+          "slots": [
+            {
+              "name": "nickName",
+              "type": "AMAZON.StreetName",
+              "samples": [
+                "{nickName}"
+              ]
+            }
+          ],
+          "samples": [
+            "place my order",
+            "place the order",
+            "yes",
+            "please place the order"
+          ]
+        },
+        {
+          "name": "ThankyouMsgIntent",
+          "slots": [],
+          "samples": [
+            "thankyou"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "10516",
+              "name": {
+                "value": "Kitchen"
+              }
+            },
+            {
+              "id": "10505",
+              "name": {
+                "value": "DiningRoom"
+              }
+            },
+            {
+              "id": "10513",
+              "name": {
+                "value": "Bedroom"
+              }
+            },
+            {
+              "id": "10509",
+              "name": {
+                "value": "Bath"
+              }
+            },
+            {
+              "id": "10501",
+              "name": {
+                "value": "LivingRoom"
+              }
+            }
+          ],
+          "name": "CategoryType"
+        },
+        {
+          "values": [
+            {
+              "id": "BD-DRSS-0002",
+              "name": {
+                "value": "Stonehenge Closet Chest of Drawers"
+              }
+            },
+            {
+              "id": "BD-BEDS-0002",
+              "name": {
+                "value": "Sleepy Head Elegant Queen Bed"
+              }
+            },
+            {
+              "id": "BD-BEDS-0001",
+              "name": {
+                "value": "Twin Bunk Bed"
+              }
+            },
+            {
+              "id": "BD-DRSS-0001",
+              "name": {
+                "value": "Style Home Large Ash Wood Chest of Drawers "
+              }
+            }
+          ],
+          "name": "ProductType"
+        }
+      ],
+      "modelConfiguration": {
+        "fallbackIntentSensitivity": {
+          "level": "LOW"
+        }
+      }
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CategoryIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.841064460735"
+          },
+          "slots": [
+            {
+              "name": "categoryName",
+              "type": "CategoryType",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1322722967300.799154283789"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.184605923279.1311442011700.228336327550",
+                  "values": [
+                    "Kitchen",
+                    "Bedroom",
+                    "LivingRoom",
+                    "Bath",
+                    "DiningRoom"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ProductIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.751671083371"
+          },
+          "slots": [
+            {
+              "name": "productName",
+              "type": "ProductType",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.897206855859.1263441370690"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.897206855859.1263441370690.1474681390997"
+                }
+              ]
+            },
+            {
+              "name": "quantity",
+              "type": "AMAZON.Ordinal",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.897206855859.555367548962"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AddToCartIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": []
+        },
+        {
+          "name": "PlaceOrderIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "nickName",
+              "type": "AMAZON.StreetName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.531444871655.1031914334566"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ThankyouMsgIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": []
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Intent.1322722967300",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure with your choice for {categoryName} ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1322722967300.799154283789",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please  provide your choice of category."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.897206855859.1263441370690",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you mind to speak with your choice of product?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.897206855859.1263441370690.1474681390997",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sorry, we don\u0027t have {productName} available. Please retry."
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.897206855859.1263441370690",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure with your choice for {quantity} of {productName} ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.897206855859.555367548962",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Thankyou for choosing {productName} . May I know how much quantity you want to order?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.531444871655.1031914334566",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you mind to provide your address nickname?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.184605923279.1311442011700.228336327550",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sorry, we don\u0027t have this {categoryName} available. Please retry."
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.448580904728.1198141608796",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure with {categoryName} ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.751671083371",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "You have selected {quantity} of {productName} . Are you sure with this?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.841064460735",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure with {categoryName} ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.627190484605",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you like to place the order ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1154629832342",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Thankyou, Have a great day."
+          }
+        ]
+      }
+    ]
+  },
+  "version": "52"
+}
