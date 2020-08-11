@@ -16,7 +16,7 @@ Recommended:
 * You should have some experience with scripting or Javascript programming.
 * Basic exprience of API Handling.
 * Handson in AWS Lambdas.
-* Experience in Axios, https, ask-sdk-core,i18next APIs.
+* Experience in Axios, https, ask-sdk-core, i18next JS librays/API.
 
 <hr />
 
