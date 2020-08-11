@@ -1,0 +1,16 @@
+{
+    "name": "hcl-hackathon-store",
+    "version": "0.7.0",
+    "description": "placing an order from hcl hackathon store skill ",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Kamesh Singh Rathore <kamesh.kr258@gmail.com>",
+    "dependencies": {
+        "ask-sdk-core": "^2.7.0",
+        "ask-sdk-model": "^1.18.0",
+        "i18next": "^15.0.5",
+        "axios": "^0.18.0"
+    }
+}
