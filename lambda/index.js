@@ -9,6 +9,11 @@ const handlers = require('./handlers');
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         handlers.LaunchRequestHandler,
+        handlers.CategoryIntentHandler,
+        handlers.PlaceOrderIntentHandler,
+        handlers.ThankyouMsgIntentHandler,
+        handlers.ProductIntentHandler,
+        handlers.AddToCartIntentHandler,
         handlers.HelpIntentHandler,
         handlers.CancelAndStopIntentHandler,
         handlers.FallbackIntentHandler,
